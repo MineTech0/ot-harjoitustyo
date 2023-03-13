@@ -1,0 +1,113 @@
+ommit 807fd9d649b63512a8bb845c6694b1b383230f3b
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:52:39 2023 +0200
+
+    juttui
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f2806951b2e12836d276664e23952421328ffeda
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:49:40 2023 +0200
+
+    tiedostoja
+
+ file.txt         | 0
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+
+commit b21ff3a33911b8fb28c23ddbca39641000257a78
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:42:36 2023 +0200
+
+    muutosk
+
+ kolmas.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 9ef1e4afe6464e9a7f6379b765d5e932d01116aa
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:41:01 2023 +0200
+
+    nimeäminen
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b82d2ee23f86e6de5deb3a9af0da697669db5475
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:39:46 2023 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 082f8e1f1a0b62fc0f61f567e896bf561381e819
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:37:30 2023 +0200
+
+    tekstiä
+
+ tiedosto.txt | 29 ++++++++++++++++++++++-------
+ 1 file changed, 22 insertions(+), 7 deletions(-)
+
+commit 779924a70af303f47d5c10f1c3acbbd0f5f6925e
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:31:05 2023 +0200
+
+    tekstiä
+
+ tiedosto.txt | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
+commit d6dda660f0a550c9e38738920c4c0bbbabe15dd3
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:27:00 2023 +0200
+
+    uus kansio
+
+ stuff/stuff.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5d5314c01fcf24262d1b1412423940ab963da26d
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:25:26 2023 +0200
+
+    juttui
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit a137ab2307ec0d7e97f7697f760cc9ba1cc74b20
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:23:57 2023 +0200
+
+    uus tiedosto
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9b732054f123ea4de41c664b2566b1e7238eb574
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:21:00 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 7d97aedc8839240a612dfb7e87c44dbf969032bb
+Author: Niilo Kurki <niilo.kurki@helsinki.fi>
+Date:   Mon Mar 13 13:14:58 2023 +0200
+
+    tiedostotxt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
