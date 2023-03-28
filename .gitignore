@@ -2,3 +2,6 @@ __pycache__
 .coverage
 htmlcov
 .vscode
+.pytest_cache
+.env
+env.test
