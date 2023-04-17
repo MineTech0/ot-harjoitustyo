@@ -8,7 +8,7 @@ Sovelluksen tarkoitus on toimia salasananhallintaohjelmana, joka mahdollistaa k�
 
 [Vaatimusmäärittely](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[Tuntikirjanpito](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/tunitkirjanpito.md)
+[Tuntikirjanpito](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 [Changelog](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
@@ -58,3 +58,15 @@ poetry run invoke coverage-report
 ```
 
 Raportti generoituu _htmlcov_-hakemistoon.
+
+### Pylint
+
+```bash
+poetry run invoke lint
+```
+
+### Formatointi
+
+```bash
+poetry run invoke format
+```
