@@ -22,3 +22,5 @@ class UserRepository():
             "INSERT INTO users (name, password) VALUES (?, ?)", (user_name, password))
         # Commit changes
         self._connection.commit()
+        
+user_repository = UserRepository()

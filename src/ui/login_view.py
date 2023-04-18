@@ -1,5 +1,5 @@
 from tkinter import ttk
-from services.user_service import UserService
+from services.user_service import user_service
 
 from ui.base_view import BaseView
 
@@ -36,8 +36,6 @@ class LoginView(BaseView):
     def _handle_login(self):
         user_name = self._username_input.get()
         password = self._password_input.get()
-
-        user_service = UserService()
 
         if user_service.login_user(user_name, password):
             self.navigate('main')

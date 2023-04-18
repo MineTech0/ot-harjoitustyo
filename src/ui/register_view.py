@@ -1,5 +1,5 @@
 from tkinter import ttk
-from services.user_service import UserService
+from services.user_service import user_service
 
 from ui.base_view import BaseView
 
@@ -27,7 +27,6 @@ class RegisterView(BaseView):
         button.grid(row=2, column=1)
 
     def _handle_register(self):
-        user_service = UserService()
 
         user_name = self._username_input.get()
         password = self._password_input.get()
