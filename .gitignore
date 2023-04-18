@@ -6,3 +6,4 @@ htmlcov
 .env
 env.test
 data
+.env.test
