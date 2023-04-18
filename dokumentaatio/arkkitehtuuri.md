@@ -1,0 +1,1 @@
+![Pakkausrakenne](./kuvat/pakkauskaavio.png)

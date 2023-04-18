@@ -12,6 +12,8 @@ Sovelluksen tarkoitus on toimia salasananhallintaohjelmana, joka mahdollistaa k√
 
 [Changelog](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
+[Arkkitehtuuri](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Asennus
 
 1. Asenna riippuvuudet komennolla:
