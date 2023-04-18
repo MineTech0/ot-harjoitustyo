@@ -12,10 +12,10 @@ Sovelluksessa on vain yksi rooli _normaali käyttäjä_, joka kirjautuu sovelluk
 
 ## MVP ominaisuudet
 
-- Käyttäjä voi luoda uuden käyttäjätunnuksen ja kirjautua sisään sovellukseen.
-- Käyttäjä voi tallentaa uusia käyttäjätunnuksia ja salasanoja sovellukseen.
-- Käyttäjä voi tarkastella tallennettuja käyttäjätunnuksia ja salasanoja.
-- Sovellus tallentaa salasanat turvallisesti salattuun tietokantaan.
+- [ x ] Käyttäjä voi luoda uuden käyttäjätunnuksen ja kirjautua sisään sovellukseen.
+- [ ] Käyttäjä voi tallentaa uusia käyttäjätunnuksia ja salasanoja sovellukseen.
+- [ ] Käyttäjä voi tarkastella tallennettuja käyttäjätunnuksia ja salasanoja.
+- [ ] Sovellus tallentaa salasanat turvallisesti salattuun tietokantaan.
 
 ## Jatkokehitys ideat
 
