@@ -4,6 +4,9 @@ import utils
 
 class UserService():
 
+    def __init__(self) -> None:
+        self.encryption_password = None
+
     def get_user_by_name(self, user_name):
         return user_repository.get_user_by_name(user_name)
 
@@ -15,6 +18,10 @@ class UserService():
         user = user_repository.get_user_by_name(user_name)
         if user is None:
             return False
-        return utils.check_password(password, user.password)
+        logged_in = utils.check_password(password, user.password)
+        if logged_in:
+            self.encryption_password = password
+        return logged_in
+
 
 user_service = UserService()
