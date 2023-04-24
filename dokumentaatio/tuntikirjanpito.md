@@ -6,4 +6,5 @@
 | 27.3  | 2    | Projektin alustus
 | 17.4  | 5    | Toiminnallisuuden aloitus
 | 18.4  | 5    | Diagrammit ja toiminnallisuuden jatkaminen
-| yht   | 14   | | 
+| 24.4  | 5    | Toiminnallisuuden jatkaminen
+| yht   | 19   | | 

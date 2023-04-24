@@ -18,3 +18,10 @@
 - Poistettiin common test
 - Lisättiin testi kirjautumiselle
 - Lisättiin testi rekisteröitymiselle
+
+# Viikko 5
+- Lisättiin tietokantaan tili taulu
+- Lisättiin tilien ja salasanojen tallentamin
+- Rakennettiin ui tiline ympärille
+- Siistittiin muita näkymiä
+- Muutettiin tietokantamigraatio
