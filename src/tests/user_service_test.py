@@ -1,13 +1,13 @@
 import unittest
 from init_db import init_database
 
-from services.user_service import UserService
+from services.user_service import user_service
 
 
 class TestUserService(unittest.TestCase):
     def setUp(self):
         init_database()
-        self._user_service = UserService()
+        self._user_service = user_service
 
     def test_create_user(self):
         self._user_service.create_user("test", "test")
