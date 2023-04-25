@@ -9,7 +9,7 @@ class MainView(BaseView):
         accounts = account_service.get_all_account_names()
 
         # create listbox to display websites
-               # create a label for the website listbox
+        # create a label for the website listbox
         self.list_title = ttk.Label(
             master=self._frame, text="Tilit:")
         self.list_title.grid(
@@ -31,14 +31,14 @@ class MainView(BaseView):
 
         # create labels and text boxes to display username and password
         self.username_label = ttk.Label(
-            master=self.details_frame, text="Username:")
+            master=self.details_frame, text="Käyttäjänimi:")
         self.username_label.grid(
             row=0, column=0, padx=10, pady=10, sticky='w')
         self.username_textbox = ttk.Entry(master=self.details_frame)
         self.username_textbox.grid(
             row=0, column=1, padx=10, pady=10, sticky='ew')
         self.password_label = ttk.Label(
-            master=self.details_frame, text="Password:")
+            master=self.details_frame, text="Salasana:")
         self.password_label.grid(
             row=1, column=0, padx=10, pady=10, sticky='w')
         self.password_textbox = ttk.Entry(
@@ -50,7 +50,7 @@ class MainView(BaseView):
         self.password_show_button.grid(
             row=1, column=2, padx=10, pady=10, sticky='e')
         self.account_name_label = ttk.Label(
-            master=self.details_frame, text="Account Name:")
+            master=self.details_frame, text="Tilin nimi")
         self.account_name_label.grid(
             row=2, column=0, padx=10, pady=10, sticky='w')
         self.account_name_textbox = ttk.Entry(master=self.details_frame)
@@ -59,10 +59,10 @@ class MainView(BaseView):
 
         # create button to add new account
         self.add_account_button = ttk.Button(
-            master=self.details_frame, text="Add Account", command=self.add_account)
+            master=self.details_frame, text="Lisää tili", command=self.add_account)
         self.add_account_button.grid(
             row=3, column=1, padx=10, pady=10, sticky='e')
-        
+
     def show_passwords(self, event):
         # get selected website
         selected_account = self.website_listbox.get(
@@ -73,7 +73,7 @@ class MainView(BaseView):
 
         self.password_textbox.configure(show='*')
         self.password_show_button.configure(text='Näytä')
-            
+
         # display username and password in text boxes
         self.username_textbox.delete(0, tk.END)
         self.username_textbox.insert(0, account.user_name)
@@ -109,15 +109,15 @@ class MainView(BaseView):
         else:
             self.password_textbox.configure(show='')
             self.password_show_button.configure(text='Piilota')
-            
+
     def validate_fields(self):
         if self.username_textbox.get() == '':
-            self.show_error('Username cannot be empty')
+            self.show_error('Käyttäjänimi ei voi olla tyhjä')
             return False
         if self.password_textbox.get() == '':
-            self.show_error('Password cannot be empty')
+            self.show_error('Salasana ei voi olla tyhjä')
             return False
         if self.account_name_textbox.get() == '':
-            self.show_error('Account Name cannot be empty')
+            self.show_error('Tilin nimi ei voi olla tyhjä')
             return False
         return True
