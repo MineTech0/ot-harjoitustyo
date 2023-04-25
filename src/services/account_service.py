@@ -9,13 +9,15 @@ class AccountService():
         return account_repository.get_all_account_names()
 
     def add_account(self, account, username, password):
-        password = utils.encrypt(password, user_service.encryption_password)
+        password = utils.encrypt(
+            password, user_service.get_encryption_password())
         account_repository.add_account(account, username, password)
 
     def get_account(self, account):
         account = account_repository.get_account(account)
         account.password = utils.decrypt(
-                account.password, user_service.encryption_password)
+            account.password, user_service.get_encryption_password())
         return account
+
 
 account_service = AccountService()

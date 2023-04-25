@@ -7,6 +7,11 @@ class UserService():
     def __init__(self) -> None:
         self.encryption_password = None
 
+    def get_encryption_password(self):
+        if self.encryption_password is None:
+            raise ValueError("No user logged in")
+        return self.encryption_password
+
     def get_user_by_name(self, user_name):
         return user_repository.get_user_by_name(user_name)
 
