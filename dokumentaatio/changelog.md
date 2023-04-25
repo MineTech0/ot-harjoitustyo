@@ -25,3 +25,6 @@
 - Rakennettiin ui tiline ympärille
 - Siistittiin muita näkymiä
 - Muutettiin tietokantamigraatio
+- Lisättiin tilien testit
+- Lisättiin rekisteröitymis sekvenssikaavio
+- Lisättiin kuvauksia arkkitehtuuri dokumentaatioon

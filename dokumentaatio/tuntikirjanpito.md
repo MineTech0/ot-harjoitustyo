@@ -7,4 +7,5 @@
 | 17.4  | 5    | Toiminnallisuuden aloitus
 | 18.4  | 5    | Diagrammit ja toiminnallisuuden jatkaminen
 | 24.4  | 5    | Toiminnallisuuden jatkaminen
-| yht   | 19   | | 
+| 25.4  | 5    | Korjauksia toiminnallisuuteen ja dokumentaatiota
+| yht   | 24  | | 
