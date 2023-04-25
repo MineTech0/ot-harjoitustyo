@@ -8,11 +8,11 @@ class RegisterView(BaseView):
 
     def _initialize(self):
         username_label = ttk.Label(
-            master=self._frame, 
+            master=self._frame,
             text="Syötä käyttäjänimi:"
         )
         password_label = ttk.Label(
-            master=self._frame, 
+            master=self._frame,
             text="Syötä salasana:"
         )
 
@@ -34,12 +34,11 @@ class RegisterView(BaseView):
 
         # Bind the "Enter" key to the input fields to submit the form
         self._password_input.bind("<Return>", self._handle_register)
-        
+
         self._username_input.focus_set()
 
+    def _handle_register(self, event=None):
 
-    def _handle_register(self,event=None):
-        
         if not self.validate_inputs():
             return
 
@@ -51,10 +50,11 @@ class RegisterView(BaseView):
         self.show_info("Rekisteröityminen onnistui")
 
         self.navigate('login')
-        
+
     def validate_inputs(self):
         if len(self._username_input.get()) < 3:
-            self.show_error("Käyttäjänimen tulee olla vähintään 3 merkkiä pitkä")
+            self.show_error(
+                "Käyttäjänimen tulee olla vähintään 3 merkkiä pitkä")
             return False
         if len(self._password_input.get()) < 5:
             self.show_error("Salasanan tulee olla vähintään 5 merkkiä pitkä")

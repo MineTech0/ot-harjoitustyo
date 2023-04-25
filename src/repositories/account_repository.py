@@ -13,7 +13,8 @@ class AccountRepository:
 
     def add_account(self, account, username, password):
         self._connection.execute(
-            "INSERT INTO accounts (name, user_name, password) VALUES (?, ?, ?)", (account, username, password))
+            """INSERT INTO accounts (name, user_name, password) 
+            VALUES (?, ?, ?)""", (account, username, password))
         self._connection.commit()
         print("Account added")
 
