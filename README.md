@@ -16,6 +16,8 @@ Sovelluksen tarkoitus on toimia salasananhallintaohjelmana, joka mahdollistaa k�
 
 ## Asennus
 
+Projekti on testattu toimivaksi Python-versiolla 3.10.6 ja Poetry veriolla 1.4.0. Sovelluksen toimivuuden varmistamiseksi on suositeltavaa k채ytt채채 t채t채 versiota.
+
 1. Asenna riippuvuudet komennolla:
 
 ```bash
