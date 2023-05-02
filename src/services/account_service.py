@@ -2,6 +2,8 @@ from repositories.account_repository import account_repository
 from services.user_service import user_service
 import utils
 
+class AccountNameTakenException(Exception):
+    pass
 
 class AccountService():
 
@@ -9,9 +11,13 @@ class AccountService():
         return account_repository.get_all_account_names()
 
     def add_account(self, account, username, password):
-        password = utils.encrypt(
-            password, user_service.get_encryption_password())
-        account_repository.add_account(account, username, password)
+        #check if account name is taken
+        if account in self.get_all_account_names():
+            raise AccountNameTakenException
+        else:
+            password = utils.encrypt(
+                password, user_service.get_encryption_password())
+            account_repository.add_account(account, username, password)
 
     def get_account(self, account):
         account = account_repository.get_account(account)

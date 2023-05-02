@@ -86,6 +86,17 @@ class MainView(BaseView):
         self.account_name_textbox.delete(0, tk.END)
         self.account_name_textbox.insert(0, account.name)
 
+    def update_account_list(self):
+        # clear listbox
+        self.website_listbox.delete(0, tk.END)
+
+        # get all account names
+        accounts = account_service.get_all_account_names()
+
+        # insert account names into listbox
+        for account in accounts:
+            self.website_listbox.insert(tk.END, account)
+
     def add_account(self):
         if not self.validate_fields():
             return
@@ -95,13 +106,18 @@ class MainView(BaseView):
         password = self.password_textbox.get()
 
         # add new account to account service
-        account_service.add_account(account, username, password)
+        try:
+            account_service.add_account(account, username, password)
+        except AccountNameTakenException:
+            self.show_error("Tilin nimi on jo käytössä")
+            return
 
         # update listbox and clear text boxes
-        accounts = account_service.get_all_account_names()
-        self.website_listbox.delete(0, tk.END)
-        for account in accounts:
-            self.website_listbox.insert(tk.END, account)
+        self.update_account_list()
+
+        self.username_textbox.delete(0, tk.END)
+        self.password_textbox.delete(0, tk.END)
+        self.account_name_textbox.delete(0, tk.END)
         self.username_textbox.delete(0, tk.END)
         self.password_textbox.delete(0, tk.END)
         self.account_name_textbox.delete(0, tk.END)
