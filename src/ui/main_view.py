@@ -1,11 +1,15 @@
 from tkinter import ttk
 import tkinter as tk
 from ui.base_view import BaseView
-from services.account_service import account_service
+from services.account_service import AccountNameTakenException, account_service
+from services.user_service import user_service
 
 
 class MainView(BaseView):
     def _initialize(self):
+        # create menu
+        self.create_menu()
+
         accounts = account_service.get_all_account_names()
 
         # create listbox to display websites
@@ -67,6 +71,15 @@ class MainView(BaseView):
             master=self.details_frame, text="Poista tili", command=self.delete_account)
         self.delete_account_button.grid(
             row=3, column=0, padx=10, pady=10, sticky='w')
+
+    def create_menu(self):
+        # create a menu bar with a File menu
+        self.menu_bar = tk.Menu(self.root)
+        self.user_menu = tk.Menu(self.menu_bar, tearoff=0)
+        self.user_menu.add_command(label="Kirjaudu ulos", command=self.logout)
+        self.menu_bar.add_cascade(label="Käyttäjä", menu=self.user_menu)
+        self.root.config(menu=self.menu_bar)
+
     def show_passwords(self, event):
         # get selected website
         selected_account = self.website_listbox.get(
@@ -141,3 +154,7 @@ class MainView(BaseView):
             self.show_error('Tilin nimi ei voi olla tyhjä')
             return False
         return True
+
+    def logout(self):
+        user_service.logout_user()
+        self.navigate('login')

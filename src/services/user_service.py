@@ -35,6 +35,8 @@ class UserService():
         if logged_in:
             self.encryption_password = password
         return logged_in
+    def logout_user(self):
+        self.encryption_password = None
 
 
 user_service = UserService()
