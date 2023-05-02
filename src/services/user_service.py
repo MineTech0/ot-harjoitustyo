@@ -2,6 +2,10 @@ from repositories.user_repository import user_repository
 import utils
 
 
+class UserNameTakenException(Exception):
+    pass
+
+
 class UserService():
 
     def __init__(self) -> None:
@@ -16,8 +20,12 @@ class UserService():
         return user_repository.get_user_by_name(user_name)
 
     def create_user(self, user_name, password):
-        password = utils.hash_password(password)
-        user_repository.create_user(user_name, password)
+        # check if username is taken
+        if user_repository.get_user_by_name(user_name) is not None:
+            raise UserNameTakenException
+        else:
+            password = utils.hash_password(password)
+            user_repository.create_user(user_name, password)
 
     def login_user(self, user_name, password):
         user = user_repository.get_user_by_name(user_name)

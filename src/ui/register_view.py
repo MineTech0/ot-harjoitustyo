@@ -1,5 +1,5 @@
 from tkinter import ttk
-from services.user_service import user_service
+from services.user_service import UserNameTakenException, user_service
 
 from ui.base_view import BaseView
 
@@ -45,7 +45,11 @@ class RegisterView(BaseView):
         user_name = self._username_input.get()
         password = self._password_input.get()
 
-        user_service.create_user(user_name, password)
+        try:
+            user_service.create_user(user_name, password)
+        except UserNameTakenException:
+            self.show_error("Käyttäjänimi on jo käytössä")
+            return
 
         self.show_info("Rekisteröityminen onnistui")
 
