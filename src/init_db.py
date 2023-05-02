@@ -3,13 +3,21 @@ import db
 
 
 def create_tables(connection: Connection):
+    """
+    Create all tables in the database.
+    
+    Args:
+        connection (Connection): connection to the database
+    """
+    
     connection.execute(
         "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, password TEXT)")
     connection.commit()
     print("Created users table.")
+    
     connection.execute(
         """CREATE TABLE accounts 
-        (id INTEGER PRIMARY KEY, name TEXT,
+        (id INTEGER PRIMARY KEY, name TEXT UNIQUE,
         user_name TEXT, password TEXT,
         user_id INTEGER,
         FOREIGN KEY(user_id) REFERENCES users(id))""")

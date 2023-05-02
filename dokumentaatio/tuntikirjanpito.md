@@ -8,4 +8,5 @@
 | 18.4  | 5    | Diagrammit ja toiminnallisuuden jatkaminen
 | 24.4  | 5    | Toiminnallisuuden jatkaminen
 | 25.4  | 5    | Korjauksia toiminnallisuuteen ja dokumentaatiota
-| yht   | 24  | | 
+| 2.5   | 5    |  Toiminnallisuuden kehittämistä
+| yht   | 29  | | 

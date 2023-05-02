@@ -10,9 +10,18 @@ class UI:
         self._current_view = BaseView(root, self.navigate)
 
     def start(self):
+        """
+        Starts the UI by showing the login view
+        """
         self._show_login_view()
 
-    def navigate(self, view):
+    def navigate(self, view: str):
+        """
+        This function is used to navigate between views. It is passed to the views as a parameter.
+
+        Args:
+            view (str): name of the view to navigate to
+        """
         self._current_view.destroy()
         if view == "login":
             self._show_login_view()
@@ -22,6 +31,10 @@ class UI:
             self._show_main_view()
 
     def _show_login_view(self):
+        """
+        Renders the login view.
+        """
+        self._root.geometry("400x200")
         self._current_view = LoginView(
             self._root,
             self.navigate
@@ -30,6 +43,10 @@ class UI:
         self._current_view.pack()
 
     def _show_register_view(self):
+        """
+        Renders the register view.
+        """
+        self._root.geometry("400x200")
         self._current_view = RegisterView(
             self._root,
             self.navigate
@@ -38,7 +55,10 @@ class UI:
         self._current_view.pack()
 
     def _show_main_view(self):
-        self._root.geometry("800x500")
+        """
+        Renders the main view.
+        """
+        self._root.geometry("700x300")
         self._current_view = MainView(
             self._root,
             self.navigate

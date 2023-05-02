@@ -6,7 +6,6 @@ from ui.ui import UI
 def main():
     window = Tk()
     window.title("PassSafe")
-    window.geometry("500x200")
 
     ui_view = UI(window)
     ui_view.start()

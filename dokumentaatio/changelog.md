@@ -28,3 +28,11 @@
 - Lisättiin tilien testit
 - Lisättiin rekisteröitymis sekvenssikaavio
 - Lisättiin kuvauksia arkkitehtuuri dokumentaatioon
+
+# Viikko 6
+- Lisättiin tarkistus, että ei voi luoda tiliä, jolla on sama nimi kuin toisella tilillä
+- Lisättiin mahdollisuus poistaa tili
+- Lisättiin mahdollisuus kirjaudua ulos
+- Muutettiin ikkunoiden tyyliä ja päänäkymän elementtien sijoittelua
+- Lisättiin tarkistus että käyttäjänimi on uniikki rekisteröityessä
+- Lisättiin docstringit
