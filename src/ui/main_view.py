@@ -62,7 +62,11 @@ class MainView(BaseView):
             master=self.details_frame, text="Lisää tili", command=self.add_account)
         self.add_account_button.grid(
             row=3, column=1, padx=10, pady=10, sticky='e')
-
+        # create button to delete account
+        self.delete_account_button = ttk.Button(
+            master=self.details_frame, text="Poista tili", command=self.delete_account)
+        self.delete_account_button.grid(
+            row=3, column=0, padx=10, pady=10, sticky='w')
     def show_passwords(self, event):
         # get selected website
         selected_account = self.website_listbox.get(

@@ -23,5 +23,10 @@ class AccountRepository:
             "SELECT name, user_name, password FROM accounts WHERE name = ?", (account,)).fetchone()
         return Account(result)
 
+    def delete_account(self, account_name):
+        self._connection.execute(
+            "DELETE FROM accounts WHERE name = ?", (account_name,))
+        self._connection.commit()
+        print("Account deleted")
 
 account_repository = AccountRepository()

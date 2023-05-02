@@ -18,6 +18,9 @@ class AccountService():
         account.password = utils.decrypt(
             account.password, user_service.get_encryption_password())
         return account
+    
+    def delete_account(self, account_name):
+        account_repository.delete_account(account_name)
 
 
 account_service = AccountService()
