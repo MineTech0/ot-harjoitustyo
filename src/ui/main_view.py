@@ -12,20 +12,19 @@ class MainView(BaseView):
 
         accounts = account_service.get_all_account_names()
 
-        # create listbox to display websites
-        # create a label for the website listbox
-        self.list_title = ttk.Label(
+        # create a label frame for the website listbox
+        self.list_frame = ttk.LabelFrame(
             master=self._frame, text="Tilit:")
-        self.list_title.grid(
-            row=0, column=0, padx=10, pady=10, sticky='w')
+        self.list_frame.grid(
+            row=0, column=0, padx=10, pady=10, sticky='nsew')
 
-        # create a listbox for the website list
-        self.website_listbox = tk.Listbox(master=self._frame)
+        # create a listbox for the account list
+        self.website_listbox = tk.Listbox(master=self.list_frame)
         for website in accounts:
             self.website_listbox.insert(tk.END, website)
         self.website_listbox.bind('<<ListboxSelect>>', self.show_passwords)
         self.website_listbox.grid(
-            row=1, column=0, rowspan=4, padx=10, pady=10, sticky='nsew')
+            row=0, column=0, padx=10, pady=10, sticky='nsew')
 
         # create a label frame for the account details
         self.details_frame = ttk.LabelFrame(
@@ -66,6 +65,7 @@ class MainView(BaseView):
             master=self.details_frame, text="Lisää tili", command=self.add_account)
         self.add_account_button.grid(
             row=3, column=1, padx=10, pady=10, sticky='e')
+
         # create button to delete account
         self.delete_account_button = ttk.Button(
             master=self.details_frame, text="Poista tili", command=self.delete_account)
@@ -131,6 +131,13 @@ class MainView(BaseView):
         self.username_textbox.delete(0, tk.END)
         self.password_textbox.delete(0, tk.END)
         self.account_name_textbox.delete(0, tk.END)
+
+    def delete_account(self):
+        selected_account = self.website_listbox.get(
+            self.website_listbox.curselection())
+        account_service.delete_account(selected_account)
+
+        self.update_account_list()
         self.username_textbox.delete(0, tk.END)
         self.password_textbox.delete(0, tk.END)
         self.account_name_textbox.delete(0, tk.END)
