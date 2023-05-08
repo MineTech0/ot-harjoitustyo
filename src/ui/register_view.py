@@ -35,10 +35,16 @@ class RegisterView(BaseView):
         # Bind the "Enter" key to the input fields to submit the form
         self._password_input.bind("<Return>", self._handle_register)
 
+        # Focus the username input field
         self._username_input.focus_set()
 
     def _handle_register(self, event=None):
+        """
+        Handle the register button click event. If the inputs are valid, Navigates to login view
 
+        Args:
+            event (_type_, optional): Click event. Defaults to None.
+        """
         if not self.validate_inputs():
             return
 
@@ -56,6 +62,12 @@ class RegisterView(BaseView):
         self.navigate('login')
 
     def validate_inputs(self):
+        """
+        Validates the inputs. Shows an error message if the inputs are invalid.
+
+        Returns:
+            bool: True if the inputs are valid, False otherwise
+        """
         if len(self._username_input.get()) < 3:
             self.show_error(
                 "Käyttäjänimen tulee olla vähintään 3 merkkiä pitkä")

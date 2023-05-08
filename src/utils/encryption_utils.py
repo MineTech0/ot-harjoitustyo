@@ -61,7 +61,7 @@ def decrypt(secret: str, password):
     return fer.decrypt(secret.encode()).decode()
 
 
-def hash_password(password):
+def hash_password(password: str):
     """
     Generates a salt and hashes the password with the salt.
 
@@ -75,7 +75,7 @@ def hash_password(password):
     return bcrypt.hashpw(password.encode('utf8'), salt)
 
 
-def check_password(password, hashed_password):
+def check_password(password: str, hashed_password: bytes) -> bool:
     """
     Checks if the password matches the hashed password.
 

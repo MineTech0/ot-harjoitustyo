@@ -22,7 +22,7 @@ class MainView(BaseView):
         self.website_listbox = tk.Listbox(master=self.list_frame)
         for website in accounts:
             self.website_listbox.insert(tk.END, website)
-        self.website_listbox.bind('<<ListboxSelect>>', self.show_passwords)
+        self.website_listbox.bind('<<ListboxSelect>>', self.display_account)
         self.website_listbox.grid(
             row=0, column=0, padx=10, pady=10, sticky='nsew')
 
@@ -73,14 +73,23 @@ class MainView(BaseView):
             row=3, column=0, padx=10, pady=10, sticky='w')
 
     def create_menu(self):
-        # create a menu bar with a File menu
+        """
+        Creates a menu bar with a File menu.
+        """
+
         self.menu_bar = tk.Menu(self.root)
         self.user_menu = tk.Menu(self.menu_bar, tearoff=0)
         self.user_menu.add_command(label="Kirjaudu ulos", command=self.logout)
         self.menu_bar.add_cascade(label="Käyttäjä", menu=self.user_menu)
         self.root.config(menu=self.menu_bar)
 
-    def show_passwords(self, event):
+    def display_account(self, event):
+        """
+        Displays the username and password for the selected account.
+
+        Args:
+            event (_type_): click event
+        """
         # get selected website
         selected_account = self.website_listbox.get(
             self.website_listbox.curselection())
@@ -100,6 +109,10 @@ class MainView(BaseView):
         self.account_name_textbox.insert(0, account.name)
 
     def update_account_list(self):
+        """
+        Refreshes the account list.
+        """
+
         # clear listbox
         self.website_listbox.delete(0, tk.END)
 
@@ -111,6 +124,9 @@ class MainView(BaseView):
             self.website_listbox.insert(tk.END, account)
 
     def add_account(self):
+        """
+        Saves a new account with the given username and password.
+        """
         if not self.validate_fields():
             return
         # get website, username, and password from text boxes
@@ -133,6 +149,10 @@ class MainView(BaseView):
         self.account_name_textbox.delete(0, tk.END)
 
     def delete_account(self):
+        """
+        Deletes the selected account.
+        """
+
         selected_account = self.website_listbox.get(
             self.website_listbox.curselection())
         account_service.delete_account(selected_account)
@@ -143,6 +163,9 @@ class MainView(BaseView):
         self.account_name_textbox.delete(0, tk.END)
 
     def toggle_show(self):
+        """
+        Toggles the visibility of the password. And toggles the text of the visibility button.
+        """
         if self.password_textbox['show'] == '':
             self.password_textbox.configure(show='*')
             self.password_show_button.configure(text='Näytä')
@@ -151,6 +174,13 @@ class MainView(BaseView):
             self.password_show_button.configure(text='Piilota')
 
     def validate_fields(self):
+        """
+        Validates that the account fields are not empty.
+
+        Returns:
+            bool: Returns True if all fields are valid, otherwise False.
+        """
+
         if self.username_textbox.get() == '':
             self.show_error('Käyttäjänimi ei voi olla tyhjä')
             return False
@@ -163,5 +193,8 @@ class MainView(BaseView):
         return True
 
     def logout(self):
+        """
+        Logs the user out and navigates to the login view.
+        """
         user_service.logout_user()
         self.navigate('login')

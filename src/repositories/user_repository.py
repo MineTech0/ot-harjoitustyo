@@ -25,7 +25,7 @@ class UserRepository():
             return User(user)
         return None
 
-    def create_user(self, user_name: str, password: str):
+    def create_user(self, user_name: str, password: bytes):
         """
         Inserts a new user into the database.
 

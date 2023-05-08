@@ -26,12 +26,19 @@ class LoginView(BaseView):
         register_button.grid(row=3, column=0, columnspan=2,
                              padx=5, pady=5, sticky="we")
 
+        # Focus the username input field
         self._username_input.focus_set()
 
         # Bind the "Enter" key to the input fields to submit the form
         self._password_input.bind("<Return>", self._handle_login)
 
     def _handle_login(self, event=None):
+        """
+        Handle the login button click event. If the inputs are valid, Navigates to main view
+
+        Args:
+            event (_type_, optional): Click event. Defaults to None.
+        """
         user_name = self._username_input.get()
         password = self._password_input.get()
 
