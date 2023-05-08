@@ -36,3 +36,7 @@
 - Muutettiin ikkunoiden tyyliä ja päänäkymän elementtien sijoittelua
 - Lisättiin tarkistus että käyttäjänimi on uniikki rekisteröityessä
 - Lisättiin docstringit
+
+# Viikko 7
+- Lisättiin testejä uusille ominaisuuksille
+- Korjattiin bugi, jossa kaikilla käyttäjillä näkyivät kaikki tallennetut tilit
