@@ -6,5 +6,6 @@ from config import DATABASE_FILE_PATH
 connection = sqlite3.connect(os.path.join(DATABASE_FILE_PATH))
 connection.row_factory = sqlite3.Row
 
+
 def get_connection():
     return connection

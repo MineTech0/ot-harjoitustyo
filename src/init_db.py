@@ -5,16 +5,16 @@ import db
 def create_tables(connection: Connection):
     """
     Create all tables in the database.
-    
+
     Args:
         connection (Connection): connection to the database
     """
-    
+
     connection.execute(
         "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, password TEXT)")
     connection.commit()
     print("Created users table.")
-    
+
     connection.execute(
         """CREATE TABLE accounts 
         (id INTEGER PRIMARY KEY, name TEXT UNIQUE,
@@ -35,6 +35,7 @@ def drop_tables(connection):
     connection.execute("DROP TABLE IF EXISTS users")
     connection.commit()
     print("Dropped all tables.")
+
 
 def init_database():
     connection = db.get_connection()

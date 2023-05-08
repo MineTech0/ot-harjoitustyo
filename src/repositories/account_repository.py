@@ -9,7 +9,7 @@ class AccountRepository:
     def get_all_account_names(self, user_id: int):
         """
         Returns a list of all account names in the database.
-        
+
         Args:
             user_id (int): id of the current user
 
@@ -51,7 +51,7 @@ class AccountRepository:
             _type_: _description_
         """
         result = self._connection.execute(
-            "SELECT name, user_name, password FROM accounts WHERE name = ? AND user_id = ?", (account,str(user_id))).fetchone()
+            "SELECT name, user_name, password FROM accounts WHERE name = ? AND user_id = ?", (account, str(user_id))).fetchone()
         return Account(result)
 
     def delete_account(self, account_name, user_id: int):
@@ -63,7 +63,7 @@ class AccountRepository:
             user_id (int): id of the current user
         """
         self._connection.execute(
-            "DELETE FROM accounts WHERE name = ? AND user_id = ?", (account_name,str(user_id)))
+            "DELETE FROM accounts WHERE name = ? AND user_id = ?", (account_name, str(user_id)))
         self._connection.commit()
         print("Account deleted")
 

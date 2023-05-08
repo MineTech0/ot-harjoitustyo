@@ -28,7 +28,7 @@ class TestAccountService(unittest.TestCase):
         self.assertEqual(account.name, "test")
         self.assertEqual(account.user_name, "test")
         self.assertEqual(account.password, "test")
-        
+
     def test_delete_account(self):
         self._account_service.add_account("test", "test", "test")
         self._account_service.delete_account("test")
@@ -36,7 +36,7 @@ class TestAccountService(unittest.TestCase):
         self.assertEqual(len(names), 0)
 
         self.assertEqual(len(names), 0)
-        
+
     def test_no_same_name_account(self):
         self._account_service.add_account("test", "test", "test")
         self.assertRaises(
