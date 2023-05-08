@@ -6,18 +6,23 @@ class AccountRepository:
     def __init__(self):
         self._connection = get_connection()
 
-    def get_all_account_names(self):
+    def get_all_account_names(self, user_id: int):
         """
         Returns a list of all account names in the database.
+        
+        Args:
+            user_id (int): id of the current user
 
         Returns:
             list: list of all account names in the database
         """
         result = self._connection.execute(
-            "SELECT name FROM accounts").fetchall()
+            """
+            SELECT name FROM accounts WHERE user_id = ?
+            """, (str(user_id))).fetchall()
         return [row[0] for row in result]
 
-    def add_account(self, account: str, username: str, password: str):
+    def add_account(self, account: str, username: str, password: str, user_id: int):
         """
         Inserts a new account into the database.
 
@@ -25,37 +30,40 @@ class AccountRepository:
             account (str): name of the account
             username (str): username of the account
             password (str): password of the account
+            user_id (int): id of the current user
         """
 
         self._connection.execute(
-            """INSERT INTO accounts (name, user_name, password) 
-            VALUES (?, ?, ?)""", (account, username, password))
+            """INSERT INTO accounts (name, user_name, password, user_id) 
+            VALUES (?, ?, ?, ?)""", (account, username, password, str(user_id)))
         self._connection.commit()
         print("Account added")
 
-    def get_account(self, account: str) -> Account:
+    def get_account(self, account: str, user_id: int) -> Account:
         """
         Returns an account entity with the given name.
 
         Args:
             account (str): name of the account
+            user_id (int): id of the current user
 
         Returns:
             _type_: _description_
         """
         result = self._connection.execute(
-            "SELECT name, user_name, password FROM accounts WHERE name = ?", (account,)).fetchone()
+            "SELECT name, user_name, password FROM accounts WHERE name = ? AND user_id = ?", (account,str(user_id))).fetchone()
         return Account(result)
 
-    def delete_account(self, account_name):
+    def delete_account(self, account_name, user_id: int):
         """
         Deletes an account from the database.
 
         Args:
             account_name (str): name of the account to be deleted
+            user_id (int): id of the current user
         """
         self._connection.execute(
-            "DELETE FROM accounts WHERE name = ?", (account_name,))
+            "DELETE FROM accounts WHERE name = ? AND user_id = ?", (account_name,str(user_id)))
         self._connection.commit()
         print("Account deleted")
 

@@ -19,7 +19,7 @@ class UserRepository():
         """
 
         user = self._connection.execute(
-            "SELECT * FROM users WHERE name = ?", (user_name,)).fetchone()
+            "SELECT id, name, password FROM users WHERE name = ?", (user_name,)).fetchone()
 
         if user:
             return User(user)

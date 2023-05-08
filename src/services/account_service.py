@@ -13,8 +13,10 @@ class AccountService():
 
         Returns:
             list: list of all account names in the database
+            
         """
-        return account_repository.get_all_account_names()
+        user_id = user_service.get_current_user().id
+        return account_repository.get_all_account_names(user_id)
 
     def add_account(self, account: str, username: str, password: str):
         """
@@ -35,7 +37,8 @@ class AccountService():
         else:
             password = utils.encrypt(
                 password, user_service.get_encryption_password())
-            account_repository.add_account(account, username, password)
+            user_id = user_service.get_current_user().id
+            account_repository.add_account(account, username, password, user_id)
 
     def get_account(self, account_name: str):
         """
@@ -47,7 +50,8 @@ class AccountService():
         Returns:
             Account: account entity with the given name
         """
-        account = account_repository.get_account(account_name)
+        user_id = user_service.get_current_user().id
+        account = account_repository.get_account(account_name, user_id)
         account.password = utils.decrypt(
             account.password, user_service.get_encryption_password())
         return account
@@ -59,7 +63,8 @@ class AccountService():
         Args:
             account_name (str): name of the account to be deleted
         """
-        account_repository.delete_account(account_name)
+        user_id = user_service.get_current_user().id
+        account_repository.delete_account(account_name, user_id)
 
 
 account_service = AccountService()

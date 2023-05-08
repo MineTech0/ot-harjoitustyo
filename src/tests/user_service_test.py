@@ -32,6 +32,8 @@ class TestUserService(unittest.TestCase):
         self._user_service.login_user("test", "test")
         self._user_service.logout_user()
         self.assertIsNone(self._user_service.encryption_password)
+        self.assertIsNone(self._user_service.current_user)
+        self.assertRaises(ValueError, self._user_service.get_current_user)
 
     def test_get_encryption_password(self):
         self._user_service.create_user("test", "test")
