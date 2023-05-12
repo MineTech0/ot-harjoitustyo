@@ -10,7 +10,7 @@ Sovelluksen tarkoitus on toimia salasananhallintaohjelmana, joka mahdollistaa k�
 
 Sovelluksessa on vain yksi rooli _normaali käyttäjä_, joka kirjautuu sovellukseen omalla salasanallaan. 
 
-## MVP ominaisuudet
+## Ominaisuudet
 
 - [x] Käyttäjä voi luoda uuden käyttäjätunnuksen ja kirjautua sisään sovellukseen.
 - [x] Käyttäjä voi tallentaa uusia käyttäjätunnuksia ja salasanoja sovellukseen.

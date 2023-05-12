@@ -16,7 +16,7 @@ def generate_key_from_password(password):
     Returns:
         _type_: _description_
     """
-    salt_string: str = "defaultSalt"
+    salt_string: str = "secret salt"
     salt = bytes(salt_string, "utf-8")
     password = bytes(password, "utf-8")
     kdf = PBKDF2HMAC(
@@ -31,7 +31,9 @@ def generate_key_from_password(password):
 
 def encrypt(word, password) -> str:
     """
-    Encrypt a word with a password. The password is used to generate a key. The key is used to encrypt the word.
+    Encrypt a word with a password. 
+    The password is used to generate a key. 
+    The key is used to encrypt the word.
 
     Args:
         word (str): A word to encrypt
@@ -47,7 +49,9 @@ def encrypt(word, password) -> str:
 
 def decrypt(secret: str, password):
     """
-    Decrypt a secret with a password. The password is used to generate a key. The key is used to decrypt the secret.
+    Decrypt a secret with a password. 
+    The password is used to generate a key. 
+    The key is used to decrypt the secret.
 
     Args:
         secret (str): A secret to decrypt

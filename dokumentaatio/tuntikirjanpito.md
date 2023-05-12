@@ -10,4 +10,5 @@
 | 25.4  | 5    | Korjauksia toiminnallisuuteen ja dokumentaatiota
 | 2.5   | 5    | Toiminnallisuuden kehittämistä
 | 2.5   | 4    | Bugi korjauksia ja viimeistelyä
-| yht   | 33  | | 
+| 12.5   | 6    | Testien lisäämistä ja dokumentaatiota
+| yht   | 39  | | 

@@ -40,3 +40,4 @@
 # Viikko 7
 - Lisättiin testejä uusille ominaisuuksille
 - Korjattiin bugi, jossa kaikilla käyttäjillä näkyivät kaikki tallennetut tilit
+- Lisättiin loput dokumentaatiot

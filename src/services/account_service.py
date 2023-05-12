@@ -36,12 +36,12 @@ class AccountService():
         # check if account name is taken
         if account in self.get_all_account_names():
             raise AccountNameTakenException
-        else:
-            password = utils.encrypt(
-                password, user_service.get_encryption_password())
-            user_id = user_service.get_current_user().id
-            account_repository.add_account(
-                account, username, password, user_id)
+
+        password = utils.encrypt(
+            password, user_service.get_encryption_password())
+        user_id = user_service.get_current_user().id
+        account_repository.add_account(
+            account, username, password, user_id)
 
     def get_account(self, account_name: str):
         """

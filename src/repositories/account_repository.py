@@ -51,7 +51,10 @@ class AccountRepository:
             _type_: _description_
         """
         result = self._connection.execute(
-            "SELECT name, user_name, password FROM accounts WHERE name = ? AND user_id = ?", (account, str(user_id))).fetchone()
+            """
+            SELECT name, user_name, password 
+            FROM accounts 
+            WHERE name = ? AND user_id = ?""", (account, str(user_id))).fetchone()
         return Account(result)
 
     def delete_account(self, account_name, user_id: int):

@@ -6,6 +6,8 @@ Sovelluksen tarkoitus on toimia salasananhallintaohjelmana, joka mahdollistaa k�
 
 ## Dokumentaatio
 
+[Käyttöohje](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 [Vaatimusmäärittely](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Tuntikirjanpito](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
@@ -13,6 +15,8 @@ Sovelluksen tarkoitus on toimia salasananhallintaohjelmana, joka mahdollistaa k�
 [Changelog](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
 [Arkkitehtuuri](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
+[Testausdokumentti](https://github.com/MineTech0/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
 ## Asennus
 
